@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -31,9 +33,14 @@ def update(frame):
     # Find the index of the closest particle
     closest_particle_index = np.argmin(distances)
     closest_particle_position = particle_positions[closest_particle_index]
-
+    particle_speeds = particle_positions - particle_positions[closest_particle_index]
+    for particle_speed in particle_speeds:
+        if particle_speed.all() != 0:
+            magnitude = np.linalg.norm(particle_speed)
+            particle_speed /= magnitude
+            particle_speed *= -1
     # Update particle positions based on the speed of the closest particle
-    particle_positions += particle_speeds[closest_particle_index]
+    particle_positions += particle_speeds
 
     # Update scatter plot
     particles_plot.set_offsets(particle_positions)
