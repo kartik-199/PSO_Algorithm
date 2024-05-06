@@ -10,7 +10,7 @@ This Python script demonstrates a basic implementation of Particle Swarm Optimiz
 ## Installation
 1. Clone or download the repository.
 2. Ensure you have Python and the required libraries installed.
-3. Run the script `pso_animation.py`.
+3. Run the script `main.py`.
 
 ## Usage
 - Upon running the script, a plot will be generated showing particles moving towards a target point using PSO.
