@@ -63,7 +63,7 @@ ax.set_ylim(0, 100)
 ax.legend()
 
 # Animate the plot
-ani = FuncAnimation(fig, update, frames=range(100), interval=100, repeat=False)
+ani = FuncAnimation(fig, update, frames=range(120), interval=100, repeat=False)
 
 # Show plot
 plt.grid(True)
