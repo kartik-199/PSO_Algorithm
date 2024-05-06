@@ -65,9 +65,6 @@ ax.legend()
 # Animate the plot
 ani = FuncAnimation(fig, update, frames=range(120), interval=100, repeat=False)
 
-# Save the animation as a GIF
-ani.save('particle_swarm_animation.gif', writer='imagemagick')
-
 # Show plot
 plt.grid(True)
 plt.show()
