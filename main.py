@@ -1,5 +1,3 @@
-import math
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -16,11 +14,14 @@ fig, ax = plt.subplots()
 
 # Initialize scatter plot for particles
 particles_plot = ax.scatter(particle_positions[:, 0], particle_positions[:, 1], color='blue', marker='o',
-                            label='Particles', s=10)
+                            label='Particles', s=5)
 
 # Initialize target
 target = np.random.rand(2) * 100
 target_plot = ax.scatter(*target, color='red', marker='x', label="Target", s=100)
+
+# Initialize text annotation for iteration number
+iteration_text = ax.text(0.02, 0.95, '', transform=ax.transAxes, fontsize=10, color='black', verticalalignment='top')
 
 
 # Function to update particle positions
@@ -44,6 +45,9 @@ def update(frame):
 
     # Update scatter plot
     particles_plot.set_offsets(particle_positions)
+
+    # Update iteration number text
+    iteration_text.set_text('Iteration: {}'.format(frame))
 
 
 # Set axis labels and title
